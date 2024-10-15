@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard Simples</title>
+</head>
+<body>
+    <header>
+        <h1>Dashboard Simples</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#relatorios">Relatórios</a></li>
+                <li><a href="#configuracoes">Configurações</a></li>
+                <li><a href="#perfil">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Bem-vindo ao Dashboard</h2>
+            <p>Visão geral dos dados importantes.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Usuários Ativos</h3>
+                    <p>150</p>
+                </div>
+                <div class="card">
+                    <h3>Vendas Hoje</h3>
+                    <p>30</p>
+                </div>
+                <div class="card">
+                    <h3>Feedbacks Recebidos</h3>
+                    <p>12</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="relatorios">
+            <h2>Relatórios</h2>
+            <!-- Heurística 6: Reconhecimento em vez de Memorização -->
+            <p>Selecione um relatório para visualizar:</p>
+            <select id="relatorio-select">
+                <option value="">Selecione...</option>
+                <option value="vendas">Vendas</option>
+                <option value="usuarios">Usuários</option>
+            </select>
+
+            <!-- Heurística 2: Correspondência entre o Sistema e o Mundo Real -->
+            <!-- Heurística 9: Ajuda e Documentação -->
+            <button type="button" id="gerar-relatorio" title="Clique para gerar o relatório">Gerar Relatório</button>
+
+            <!-- Heurística 1: Visibilidade do Status do Sistema -->
+            <div id="feedback" style="display:none; color: green;"></div>
+            <div class="report-output">
+               
+            </div>
+        </section>
+
+        <section id="configuracoes">
+            <h2>Configurações</h2>
+            <form id="config-form">
+                <!-- Heurística 5: Prevenção de Erros (required) -->
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+                <button type="submit">Salvar Configurações</button>
+
+                <!-- Heurística 3: Controle e Liberdade do Usuário -->
+                <button type="button" onclick="cancelar()">Cancelar</button>
+            </form>
+
+            <!-- Heurística 10: Reconhecimento e Respeito à Diversidade do Usuário -->
+            <!-- Heurística 7: Flexibilidade e Eficiência de Uso -->
+            <label for="tema">Escolha o Tema:</label>
+            <select id="tema">
+                <option value="claro">Claro</option>
+                <option value="escuro">Escuro</option>
+            </select>
+        </section>
+
+        <section id="perfil">
+            <h2>Perfil do Usuário</h2>
+            <p>Nome: <span id="usuario-nome">João Silva</span></p>
+            <p>E-mail: <span id="usuario-email">joao@exemplo.com</span></p>
+            <button type="button">Editar Perfil</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dashboard Simples</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
